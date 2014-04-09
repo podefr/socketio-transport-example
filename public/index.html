@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SocketIO-Transport test</title>
+        <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+        <script src="socketio-transport.js"></script>
+    </head>
+    <body>
+
+    <script>
+        var SocketioTransport = require("socketio-transport").Client;
+        var socket = io.connect('http://localhost:8000');
+
+        var socketioTransport = new SocketioTransport(socket);
+
+        socketioTransport.listen("test", {}, function () {
+            console.log(arguments);
+        }, function () {
+            console.log(arguments);
+        });
+    </script>
+</body>
+</html>
