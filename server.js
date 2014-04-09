@@ -7,10 +7,5 @@ socketioTransport(io, new Store({
         setInterval(function () {
             onData((new Date));
         }, 200);
-
-        return function stop() {
-            console.log("ned")
-                onEnd("")
-        };
     }
 }));
